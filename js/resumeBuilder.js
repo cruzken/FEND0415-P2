@@ -25,14 +25,16 @@ $("#main").append(education.name);
 var bio = {
 	"name": "Kenneth Cruz",
 	"role": "Web Developer",
-	"welcomeMessage": "Hello! Welcome to my resume!",
 	"contacts": {
 		"mobile": "1-416-725-4991",
 		"email": "cruzken@gmail.com",
 		"github": "https://github.com/cruzken",
+		"twitter": "@cenkruz",
 		"location": "Toronto, ON, Canada"
 	},
-	"skills": ["HTML5", "CSS3", "Bootstrap", "JS", "Microsoft Office", "Windows", "Linux"]
+	"welcomeMessage": "Hello! Welcome to my resume!",
+	"skills": ["HTML5", "CSS3", "Bootstrap", "JS", "Microsoft Office", "Windows", "Linux"],
+	"biopic": "images/fry.jpg"
 };
 
 var work = {
@@ -68,14 +70,17 @@ var projects = {
 		"dates": "April 2015",
 		"description": "Developed a responsive website that will display images, descriptions and links to each of the portfolio projects that will be completed throughout the course of the Front-End Web Developer Nanodegree.",
 		"images": [
-			"https://github.com/cruzken/FEND0415-P1/blob/master/images/2015profile200px.jpg",
-			"https://github.com/cruzken/FEND0415-P1/blob/master/images/largepic.jpg",
-			"https://github.com/cruzken/FEND0415-P1/blob/master/images/project1content1.jpg",
-			"https://github.com/cruzken/FEND0415-P1/blob/master/images/project1content2.jpg",
-			"https://github.com/cruzken/FEND0415-P1/blob/master/images/project1content3.jpg"
+			"images/197x148.gif"
 		]
-
-	}
+	},
+	{
+		"title": "Online Resume",
+		"dates": "May 2015",
+		"description": "Built an interactive website using JavaScript and jQuery displaying my resume.",
+		"images": [
+			"images/197x148.gif"
+			]
+	}	
 	]
 }
 
@@ -111,18 +116,22 @@ var education = {
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
 
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
-$("#header").append(formattedName);
-$("#header").append(formattedRole);
-$("#header").append(formattedMobile);
-$("#header").append(formattedEmail);
-$("#header").append(formattedGithub);
-$("#header").append(formattedLocation);
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+$("#header").append(formattedPic);
+
+
+$("#topContacts").append(formattedMobile);
+$("#topContacts").append(formattedEmail);
+$("#topContacts").append(formattedGithub);
+$("#topContacts").append(formattedLocation);
 
 if (bio.skills.length > 0) {
 
