@@ -1,26 +1,3 @@
-/* var awesomeThoughts = "My name is Ken and I am AWESOME!";
-
-var funThoughts =
-   awesomeThoughts.replace("AWESOME", "FUN");
-
-var formattedName =
-    HTMLheaderName.replace("%data%", "Kenneth Cruz");
-
-var formattedRole =
-    HTMLheaderRole.replace("%data%", "Front-End Web Developer");
-
-$("#main").append(funThoughts);
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-*/
-
-/*
-$("#main").append(bio.name + "<br />");
-$("#main").append(bio.role + "<br />");
-$("#main").append(work["position"] + "<br />");
-$("#main").append(education.name);
-*/
-
 
 var bio = {
 	"name": "Kenneth Cruz",
