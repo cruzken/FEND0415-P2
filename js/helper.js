@@ -64,7 +64,7 @@ The International Name challenge in Lesson 2 where you'll create a function that
 */
 $(document).ready(function() {
   $('button').click(function() {
-    var iName = inName(name) || function(){};
+    var iName = inName(bio.name) || function(){};
     $('#name').html(iName);  
   });
 });
@@ -154,6 +154,23 @@ function initializeMap() {
     var name = placeData.formatted_address;   // name of the place from the place service
     var bounds = window.mapBounds;            // current boundaries of the map window
 
+    var contentstring = "";
+    if (name.indexOf(bio.contacts.location) != -1) {
+      contentstring += "I live here <br>";
+    }
+
+    for (var job in work.jobs) {
+      if (name.indexOf(work.jobs[job].location) != -1) {
+        contentstring += "I worked here <br>";
+      }
+    }
+
+    for (var school in education.schools) {
+      if (name.indexOf(education.schools[school].location) != -1) {
+        contentstring += "I studied here <br>";
+      }
+    }
+
     // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
       map: map,
@@ -165,12 +182,13 @@ function initializeMap() {
     // or hover over a pin on a map. They usually contain more information
     // about a location.
     var infoWindow = new google.maps.InfoWindow({
-      content: name
+      content: contentstring
     });
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
       // your code goes here!
+      infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.
@@ -233,7 +251,7 @@ Uncomment the code below when you're ready to implement a Google Map!
 */
 
 // Calls the initializeMap() function when the page loads
-//window.addEventListener('load', initializeMap);
+window.addEventListener('load', initializeMap);
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
