@@ -11,7 +11,7 @@ var bio = {
 	},
 	"welcomeMessage": "Hello! Welcome to my resume!",
 	"skills": ["HTML5", "CSS3", "Bootstrap", "JS", "Microsoft Office", "Windows", "Linux"],
-	"biopic": "images/fry.jpg",
+	"biopic": "images/2015pic.jpg",
 	display: function() {
 		var formattedName = HTMLheaderName.replace("%data%", bio.name);
 		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -107,7 +107,8 @@ var projects = {
 		"dates": "May 2015",
 		"description": "Built an interactive website using JavaScript and jQuery displaying my resume.",
 		"images": [
-			"images/197x148.gif"
+			"images/project2pic1.jpg",
+			"images/project2pic2.jpg"
 			]
 	},
 	{
@@ -115,7 +116,8 @@ var projects = {
 		"dates": "April 2015",
 		"description": "Developed a responsive website that will display images, descriptions and links to each of the portfolio projects that will be completed throughout the course of the Front-End Web Developer Nanodegree.",
 		"images": [
-			"images/197x148.gif"
+			"images/project1pic1.jpg",
+			"images/project1pic2.jpg"
 		]
 	}
 	],
@@ -253,3 +255,24 @@ function inName(name) {
 }
 
 $("#mapDiv").append(googleMap);
+
+// fading elements functionality
+
+$(window).on("load",function() {
+  function fade() {
+    $('.fade').each(function() {
+      /* Check the location of each desired element */
+      var objectBottom = $(this).offset().top + $(this).outerHeight();
+      var windowBottom = $(window).scrollTop() + $(window).innerHeight();
+
+      /* If the object is completely visible in the window, fade it in */
+      if (objectBottom < windowBottom) {
+        if ($(this).css('opacity')==0) {$(this).fadeTo(1000,1);}
+      } else {
+        if ($(this).css('opacity')==1) {$(this).fadeTo(1000,0);}
+      }
+    });
+  }
+  fade(); //Fade in completely visible elements during page-load
+  $(window).scroll(function() {fade();}); //Fade in elements during scroll
+});
