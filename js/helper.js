@@ -155,19 +155,19 @@ function initializeMap() {
     var bounds = window.mapBounds;            // current boundaries of the map window
 
     var contentstring = "";
-    if (name.indexOf(bio.contacts.location) != -1) {
+    if (name.indexOf(bio.contacts.location) == 0) {
       contentstring += "I live here <br>";
     }
 
     for (var job in work.jobs) {
-      if (name.indexOf(work.jobs[job].location) != -1) {
-        contentstring += "I worked here <br>";
+      if (name.indexOf(work.jobs[job].location) == 0) {
+        contentstring += "I worked here as a " + work.jobs[job].title + "<br>";
       }
     }
 
     for (var school in education.schools) {
-      if (name.indexOf(education.schools[school].location) != -1) {
-        contentstring += "I studied here <br>";
+      if (name.indexOf(education.schools[school].location) == 0) {
+        contentstring += "I studied " + education.schools[school].majors + " here<br>";
       }
     }
 

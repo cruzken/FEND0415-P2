@@ -59,6 +59,13 @@ var bio = {
 		$("#topContacts").append(formattedGithub);
 		$("#topContacts").append(formattedLocation);
 
+		$("#footerContacts").append(formattedMobile);
+		$("#footerContacts").append(formattedEmail);
+		$("#footerContacts").append(formattedTwitter);
+		$("#footerContacts").append(formattedGithub);
+		$("#footerContacts").append(formattedLocation);
+
+
 		if (bio.skills.length > 0) {
 
 			$("#header").append(HTMLskillsStart);
@@ -257,7 +264,7 @@ projects.display();
 education.display();
 
 
- 
+
 $("#main").append(internationalizeButton);
 
 function inName(name) {
