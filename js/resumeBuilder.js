@@ -10,7 +10,7 @@ var bio = {
 		"location": "North York"
 	},
 	"welcomeMessage": "Hello! Welcome to my resume!",
-	"skills": ["HTML5", "CSS3", "Bootstrap", "JS", "Microsoft Office", "Windows", "Linux"],
+	"skills": ["HTML5", "CSS3", "Bootstrap", "JS", "jQuery", "Node.js", "Express", "Responsive Design"],
 	"biopic": "images/2015pic.jpg",
 	display: function() {
 		var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -163,31 +163,31 @@ var education = {
 		"title": "Intro to jQuery",
 		"school": "Udacity",
 		"dates": "May 2015",
-		"url": "http://www.udacity.com/course/intro-to-jquery--ud245/"
+		"url": "https://www.udacity.com/course/intro-to-jquery--ud245"
 	},
 	{
 		"title": "JavaScript Basics",
 		"school": "Udacity",
 		"dates": "May 2015",
-		"url": "http://www.udacity.com/course/javascript-basics--ud804/"
+		"url": "https://www.udacity.com/course/javascript-basics--ud804"
 	},
 	{
 		"title": "Responsive Images",
 		"school": "Udacity",
 		"dates": "April 2015",
-		"url": "http://www.udacity.com/course/responsive-images--ud882/"
+		"url": "https://www.udacity.com/course/responsive-images--ud882"
 	},
 	{
 		"title": "Responsive Web Design Fundamentals",
 		"school": "Udacity",
 		"dates": "April 2015",
-		"url": "http://www.udacity.com/course/responsive-web-design-fundamentals--ud893/"
+		"url": "https://www.udacity.com/course/responsive-web-design-fundamentals--ud893"
 	},
 	{
 		"title": "Intro to HTML and CSS",
 		"school": "Udacity",
 		"dates": "April 2015",
-		"url": "http://www.udacity.com/course/intro-to-html-and-css--ud304/"
+		"url": "https://www.udacity.com/course/intro-to-html-and-css--ud304"
 	}
 	],
 	display: function() {
@@ -216,6 +216,7 @@ var education = {
 			var onlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
 			var onlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
 			var onlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+			var onlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 			var onlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 			
 			$("#education").append(HTMLschoolStart);
